@@ -6,71 +6,30 @@ import static org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
+import org.springframework.test.context.event.annotation.BeforeTestClass
 
 import io.restassured.RestAssured
 import io.restassured.response.Response
-
-import static groovy.json.JsonOutput.toJson
-
-import static org.springframework.http.MediaType.APPLICATION_JSON
-
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
-
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath
-
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
-
-
-
-import org.spockframework.spring.SpringBean
-
-import org.springframework.beans.factory.annotation.Autowired
-
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
-
-import org.springframework.boot.test.context.SpringBootTest
-
-import org.springframework.boot.test.context.TestConfiguration
-
-import org.springframework.boot.test.mock.mockito.MockBean
-
-import org.springframework.context.annotation.Bean
-
-import org.springframework.http.HttpStatus
-
-import org.springframework.test.web.servlet.MockMvc
-
-
-
-import com.fasterxml.jackson.databind.ObjectMapper
-
-
-
-import spock.lang.Specification
-
-import spock.mock.DetachedMockFactory
 
 class DevopsGroovyProductsApplicationTests {
 	
 	static API_ROOT = 'http://localhost:9090/products'
 	static productId = 1
 
-//	@BeforeTestClass
-//	static void populateData() {
-//		
-//		Product product1 = new Product(productId: 1,productName: 'Iphone13',
-//			description: 'Iphone13 Pro',price: 75453.5,
-//			starRating:4.7)
-//		
-//		
-//		
-//		Response response =
-//		RestAssured.given().contentType(MediaType.APPLICATION_JSON_VALUE)
-//		.body(product1).post(API_ROOT)
-//		
-//		
-//		
-//}
+	@BeforeTestClass
+		static void populateData() {
+	
+	Product product1 = new Product(productId: 1,productName: 'Iphone13',
+			description: 'Iphone13 Pro',price: 75453.5,
+			starRating:4.7)
+		
+		
+		
+		Response response =
+		RestAssured.given().contentType(MediaType.APPLICATION_JSON_VALUE)
+		.body(product1).post(API_ROOT)
+		
+}
 	
 
 @Test
