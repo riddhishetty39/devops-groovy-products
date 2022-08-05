@@ -52,7 +52,7 @@
 
 <url>git@github.com:riddhishetty39/devops-groovy-products.git</url>
 
-<tag>v0.0.4</tag>
+<tag>v0.0.3</tag>
 
 </scm>
 	<dependencies>
