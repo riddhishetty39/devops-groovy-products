@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>devops-groovy-products</groupId>
 	<artifactId>devops-groovy-products</artifactId>
-	<version>0.0.3-SNAPSHOT</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<name>devops-groovy-products</name>
 	<description>Demo project for Spring Boot</description>
 	<packaging>war</packaging>
