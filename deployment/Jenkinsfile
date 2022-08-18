@@ -49,10 +49,10 @@ withCredentials([usernamePassword(credentialsId:'DockerHubToken',usernameVariabl
 passwordVariable:'DockerHubTokenPassword')]){
 if (isUnix()) {
 sh "docker login -u ${env.DockerHubTokenUser} -p ${DockerHubTokenPassword}"
-sh 'docker push kpradeep/devops-groovy-products:latest'
+sh 'docker push riddhishetty/devops-groovy-products:latest'
 } else {
 bat("docker login -u ${env.DockerHubTokenUser} -p ${DockerHubTokenPassword}")
-bat('docker push kpradeep/devops-groovy-products:latest')
+bat('docker push riddhishetty/devops-groovy-products:latest')
 }
 }
 }
