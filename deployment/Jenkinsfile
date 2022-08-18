@@ -45,7 +45,7 @@ bat("docker build -t riddhishetty/devops-groovy-products:latest .")
 
 }
 stage('DockerPush'){
-withCredentials([userNamePassword(credentialsId:'DockerHubToken',usernameVariable:'DockerHubTokenUser',
+withCredentials([usernamePassword(credentialsId:'DockerHubToken',usernameVariable:'DockerHubTokenUser',
 passwordVariable:'DockerHubTokenPassword')]){
 if (isUnix()) {
 sh "docker login -u ${env.DockerHubTokenUser} -p ${DockerHubTokenPassword}"
