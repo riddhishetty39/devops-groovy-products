@@ -40,7 +40,7 @@ sh "docker build -t riddhishetty/devops-groovy-products:latest ."
 
 }
 else {
-bat(/"docker build -t riddhishetty/devops-groovy-products:latest ."/)
+bat(/"docker build -t riddhishetty/devops-groovy-products:latest .")
 }
 
 }
