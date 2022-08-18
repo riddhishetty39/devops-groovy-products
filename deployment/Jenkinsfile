@@ -44,6 +44,19 @@ bat("docker build -t riddhishetty/devops-groovy-products:latest .")
 }
 
 }
+stage('DockerPush'){
+withCredentials([userNamePassword(credentialsId:'DockerHubToken',usernameVariable:'DockerHubTokenUser',
+passwordVariable:'DockerHubTokenPassword')]){
+if (isUnix()) {
+sh "docker login -u ${env.DockerHubTokenUser} -p ${DockerHubTokenPassword}"
+sh 'docker push kpradeep/devops-groovy-products:latest'
+} else {
+bat("docker login -u ${env.DockerHubTokenUser} -p ${DockerHubTokenPassword}")
+bat('docker push kpradeep/devops-groovy-products:latest')
+}
+}
+}
+
 
 stage('Sonar') {
 if (isUnix()) {
