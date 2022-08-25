@@ -35,6 +35,7 @@
 </build>
 </profile>
 </profiles>
+	<packaging>jar</packaging>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
